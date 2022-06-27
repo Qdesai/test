@@ -50,7 +50,6 @@ class MohammedDesaiSecret{
 
                     xhr.onload = function(){
                         if(xhr.status === 200){
-                            console.log("hi");
                             responseDataObject = {
                                 location: "Windsor ON",
                                 date: "27 June",
@@ -60,8 +59,8 @@ class MohammedDesaiSecret{
                         }
                     }
                 }
-                catch{
-
+                catch(e){
+                    e;
                 }
                 finally{
 
