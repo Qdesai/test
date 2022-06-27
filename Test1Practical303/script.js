@@ -50,16 +50,17 @@ class MohammedDesaiSecret{
             }
             else{
                 try{
-   
+                    
                     var xhr = new XMLHttpRequest();
                     xhr.open("GET","guessit0776412.json");
 
                     xhr.onload = function(){
-                        console.log("hiii");
                         if (xhr.status === 200){
+                            console.log("hiiiiiiii");
                             let responseDataObject = xhr.responseText;
                             console.log(responseDataObject);
                         }
+                        xhr.send();
                     }
                 }
                 catch(e){
