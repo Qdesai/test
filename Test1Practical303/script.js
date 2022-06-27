@@ -63,7 +63,6 @@ class MohammedDesaiSecret{
                     e;
                 }
                 finally{
-
                 }
             }
         }
@@ -76,7 +75,8 @@ console.log(MDS._secret); */
 console.log(MDS.gethint);
 
 // jquery code goes here
-$(function() {
+$(function(){
+    
     $("button").on("click", function() {
         MDS.gethint();
         MDS.testSecret();
