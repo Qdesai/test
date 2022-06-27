@@ -50,8 +50,18 @@ class MohammedDesaiSecret{
             }
             else{
                 try{
-                    
                     var xhr = new XMLHttpRequest();
+
+                    xhr.open("GET", "guessit0776412.json");
+                    xhr.onload = function () { 
+                        console.log("helloo");
+                        if (xhr.status === 200){
+                            
+                            console.log(xhr.responseText);
+                        };
+                    xhr.send();
+                    }
+                    /* var xhr = new XMLHttpRequest();
                     xhr.open("GET","guessit0776412.json");
 
                     xhr.onload = function(){
@@ -61,7 +71,7 @@ class MohammedDesaiSecret{
                             console.log(responseDataObject);
                         }
                         xhr.send();
-                    }
+                    } */
                 }
                 catch(e){
                     e;
