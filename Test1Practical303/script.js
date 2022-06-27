@@ -20,7 +20,6 @@ class MohammedDesaiSecret{
         };
                           
         gethint(){
-            
             if(this.guessNumber < 5)
             {
                 let newNum = this.hints[this.guessNumber];
@@ -32,7 +31,14 @@ class MohammedDesaiSecret{
                 console.log(" ");
             }        
         }
+
+        set _secret(value){
+            //this._secret = value;
+            
+        }
+
         testSecret(s){
+
             this.guessNumber ++;
             if(this.guessNumber > 5){
                 //console.log("Sorry you have lost the game!");
@@ -44,18 +50,14 @@ class MohammedDesaiSecret{
             }
             else{
                 try{
-                    
+                    console.log("hiii");    
                     var xhr = new XMLHttpRequest();
                     xhr.open("GET","guessit0776412.json");
 
                     xhr.onload = function(){
                         if(xhr.status === 200){
-                            responseDataObject = {
-                                location: "Windsor ON",
-                                date: "27 June",
-                                file: "guessit0776412.json"                                
-                            }
-                            console.log(this.responseDataObject);
+                            let responseDataObject = xhr.responseText;
+                            console.log(responseDataObject);
                         }
                     }
                 }
@@ -68,15 +70,14 @@ class MohammedDesaiSecret{
         }
 };
 
-let MDS = new MohammedDesaiSecret("abc");
-/* console.log(MDS.hints);
-console.log(MDS.guessNumber);
-console.log(MDS._secret); */
-console.log(MDS.gethint);
+var fname = document.getElementById("filename").value;
+let MDS = new MohammedDesaiSecret(fname);
+
+
 
 // jquery code goes here
 $(function(){
-    
+
     $("button").on("click", function() {
         MDS.gethint();
         MDS.testSecret();
